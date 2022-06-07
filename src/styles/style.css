@@ -225,7 +225,7 @@ main {
 
 .completed {
   background-color: rgba(47, 79, 79);
-  background-image: url('asset/blob-1.svg');
+  /* background-image: url('asset/blob-1.svg'); */
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: 1vh;
@@ -235,7 +235,7 @@ main {
 
 .uncompleted {
   background-color: lightcoral;
-  background-image: url('asset/animasi-1.png');
+  /* background-image: url('asset/animasi-1.png'); */
   background-size: 60%;
   background-repeat: no-repeat;
   background-position-x: right;
@@ -304,7 +304,7 @@ footer{
   main {
       flex-direction: column;
       justify-content: center;
-      background-image: url('asset/2.svg'), url('asset/1.svg');
+      /* background-image: url('asset/2.svg'), url('asset/1.svg'); */
       background-position: top, bottom;
       background-size: auto, auto;
       
@@ -326,7 +326,7 @@ footer{
   main {
       flex-direction: column;
       justify-content: center;
-      background-image: url('asset/2.svg'), url('asset/1.svg');
+      /* background-image: url('asset/2.svg'), url('asset/1.svg'); */
       background-position: top, bottom;
       background-size: auto, auto;
       
@@ -346,7 +346,7 @@ footer{
   main {
       flex-direction: column;
       justify-content: center;
-      background-image: url('asset/2.svg'), url('asset/1.svg');
+      /* background-image: url('asset/2.svg'), url('asset/1.svg'); */
       background-position: top, bottom;
       background-size: auto, auto;
       
@@ -361,7 +361,7 @@ footer{
 
   main {
       flex-direction: row;
-      background: url('asset/3.svg'), url('asset/4.svg');
+      /* background: url('asset/3.svg'), url('asset/4.svg'); */
       background-repeat: no-repeat, no-repeat;
       background-size: auto, 30%;
       background-position-y: bottom, 2vh;
