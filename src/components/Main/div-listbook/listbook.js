@@ -2,17 +2,16 @@ import React from "react";
 import ArciveBook from "./arcive";
 import DisplayBook from "./display";
 
-class Listbook extends React.Component{
-    render(){
+function Listbook({ books }){
         return(
             <div className="utama kedua">
                 <div className="container">
-                    <DisplayBook />
-                    <ArciveBook />
+                    <DisplayBook books={books} />
+                    <ArciveBook books={books} />
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default Listbook;
