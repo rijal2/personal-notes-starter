@@ -1,7 +1,7 @@
 import React from "react";
 import BoxBook from "./box-book";
 
-function DisplayBook({ books }){
+function DisplayBook({ books, delAction, moveAction }){
         const bookTrue = books.filter((book) => (book.archived === true))
     
         return(
@@ -11,7 +11,7 @@ function DisplayBook({ books }){
                 {
                     bookTrue.map((book) => (
 
-                        <BoxBook key={book.id} {...book}/>
+                        <BoxBook id={book.id} delAction={delAction} moveAction={moveAction} key={book.id} {...book}/>
                     ))
                 }
             </section>

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./button/div-button";
 
-function BoxBook({ title, body}){
+function BoxBook({ title, body, id, delAction, moveAction}){
 
     return (
         <div className="book_list">
@@ -9,7 +9,7 @@ function BoxBook({ title, body}){
                 <h3>{title}</h3>
                 <p>Deskripsi:</p>
                 <p>{body}</p>
-                <Button />
+                <Button id={id} delAction={delAction} moveAction={moveAction} />
             </article>
         </div>
     )

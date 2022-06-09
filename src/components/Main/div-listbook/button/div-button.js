@@ -2,11 +2,11 @@ import React from "react";
 import DeleteButton from "./delete-button";
 import MoveButton from "./move-button";
 
-function Button({id, action}){
+function Button({id, delAction, moveAction}){
     return (
         <div className="action">
-            <MoveButton id={id} moveAction={action} />
-            <DeleteButton id={id} onDelete={action} />
+            <MoveButton id={id} action={moveAction} />
+            <DeleteButton id={id} action={delAction} />
         </div>
     )
 }

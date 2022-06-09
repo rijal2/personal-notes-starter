@@ -1,7 +1,7 @@
 import React from "react";
 import BoxBook from "./box-book";
 
-function ArciveBook({ books }){
+function ArciveBook({ books, delAction, moveAction }){
     const bookFlase = books.filter((book) => (book.archived === false))
         return(
             <section className="book_shelf dua" id="rak2">
@@ -10,7 +10,7 @@ function ArciveBook({ books }){
                 {
                     bookFlase.map((book) => (
 
-                        <BoxBook key={book.id} {...book}/>
+                        <BoxBook id={book.id} delAction={delAction} moveAction={moveAction} key={book.id} {...book}/>
                     ))
                 }
             </section>
