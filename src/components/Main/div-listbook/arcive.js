@@ -1,19 +1,20 @@
 import React from "react";
 import BoxBook from "./box-book";
 
-function ArciveBook({ books, delAction, moveAction }){
-    const bookFlase = books.filter((book) => (book.archived === false))
+function ArciveBook(props){
+    // const listFalse = props.boT.filter((b) => b.archived === false)
         return(
-            <section className="book_shelf dua" id="rak2">
+            <div className="book_shelf dua" id="rak2">
                 <h2>RAK 2</h2>
                 <h2>ARSIP BUKU</h2>
                 {
-                    bookFlase.map((book) => (
-
-                        <BoxBook id={book.id} delAction={delAction} moveAction={moveAction} key={book.id} {...book}/>
+                    props.boF.map((b) => (
+                        <BoxBook id={b.id} delAction={props.delAction} moveAction={props.moveAction} key={b.id} {...b}/>
                     ))
                 }
-            </section>
+                
+                {/* <BoxBook id={book.id} delAction={delAction} moveAction={moveAction} key={book.id} {...book}/> */}
+            </div>
         )
     
 }

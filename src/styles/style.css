@@ -22,11 +22,11 @@ input, button {
   color: rgb(208, 228, 28);
 }
 
-main {
+.ok {
   margin: 0 auto;
   padding: 16px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 
 }
 
@@ -75,6 +75,14 @@ main {
   border-radius: 5px;
   margin-top: 3px;
   
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 3px;
 }
 
 .input_section > form > .input > label {
@@ -301,7 +309,7 @@ footer{
   .book_shelf {
       margin-top: 10px;
   }
-  main {
+  .ok {
       flex-direction: column;
       justify-content: center;
       /* background-image: url('asset/2.svg'), url('asset/1.svg'); */
@@ -323,7 +331,7 @@ footer{
       max-width: 630px;
       align-self: center;
   }
-  main {
+  .ok {
       flex-direction: column;
       justify-content: center;
       /* background-image: url('asset/2.svg'), url('asset/1.svg'); */
@@ -343,7 +351,7 @@ footer{
       max-width: 630px;
       align-self: center;
   }
-  main {
+  .ok {
       flex-direction: column;
       justify-content: center;
       /* background-image: url('asset/2.svg'), url('asset/1.svg'); */
@@ -359,7 +367,7 @@ footer{
       min-width: 200px;
   }
 
-  main {
+  .ok {
       flex-direction: row;
       /* background: url('asset/3.svg'), url('asset/4.svg'); */
       background-repeat: no-repeat, no-repeat;

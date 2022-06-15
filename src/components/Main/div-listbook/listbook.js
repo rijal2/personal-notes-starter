@@ -6,31 +6,18 @@ import { getInitialData } from "../../../utils/data";
 class Listbook extends React.Component{
     constructor(props){
         super(props)
-
-        this.state = {
-            books: getInitialData()
-        }
-
-        this.onDeleteBook = this.onDeleteBook.bind(this)
-        this.onMoveBook = this.onMoveBook.bind(this)
-    }
-
-    onDeleteBook(id){
-        const books = this.state.books.filter((book) => (book.id) !== id);
-        this.setState({books})
-    }
-
-    onMoveBook(id){
-        alert('are you ok?')
-        
+ 
     }
 
     render(){
+        // console.log(`Didalam Listbook T ${this.props.booksTr}`)
+        // console.log(`Didalam Listbook F ${this.props.books}`)
+        // const ok = this.props.booksTr.filter((b) => b.archived === true)
         return(
             <div className="utama kedua">
                 <div className="container">
-                    <DisplayBook books={this.state.books} delAction={this.onDeleteBook} moveAction={this.onMoveBook} />
-                    <ArciveBook books={this.state.books} delAction={this.onDeleteBook} moveAction={this.onMoveBook} />
+                    <DisplayBook boT={this.props.books.filter((b) => b.archived === "b")} delAction={this.props.onDeleteBook} moveAction={this.props.moveTo} />
+                    <ArciveBook boF={this.props.books.filter((b) => b.archived === "s")} delAction={this.props.onDeleteBook} moveAction={this.props.moveTo} />
                 </div>
             </div>
         )
