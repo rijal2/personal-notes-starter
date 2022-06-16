@@ -7,6 +7,7 @@ class BoxBook extends React.Component{
         super(props)
 
         this.moveToGreatest = this.moveToGreatest.bind(this)
+        this.deleteBook = this.deleteBook.bind(this)
     }
 
     moveToGreatest = (event) => {
@@ -16,14 +17,19 @@ class BoxBook extends React.Component{
         this.props.moveAction(this.props.id)
     }
 
+    deleteBook = (event) => {
+        alert('Apakah Anda yakin ingin MENGHAPUS buku ini?')
+        this.props.delAction(this.props.id)
+    }
+
     render(){
         return (
             <div className="book_list">
                 <article className="book_item">
                     <h3>{this.props.title}</h3>
-                    <p>Deskripsi: {this.props.archived} dan {this.props.id}</p>
+                    <p>Deskripsi: {this.props.archived.toString()} dan {this.props.id}</p>
                     <p>{this.props.body}</p>
-                    <Button id={this.props.id} delAction={this.props.delAction} moveAction={this.moveToGreatest} />
+                    <Button id={this.props.id} delAction={this.deleteBook} moveAction={this.moveToGreatest} />
                 </article>
             </div>
         )

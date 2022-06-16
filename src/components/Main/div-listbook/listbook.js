@@ -6,7 +6,15 @@ import { getInitialData } from "../../../utils/data";
 class Listbook extends React.Component{
     constructor(props){
         super(props)
- 
+        this.state={
+            booksView : this.props.books
+        }
+
+        this.onSearch = this.onSearch.bind(this)
+    }
+    
+    onSearch = ()=>{
+
     }
 
     render(){
@@ -16,8 +24,8 @@ class Listbook extends React.Component{
         return(
             <div className="utama kedua">
                 <div className="container">
-                    <DisplayBook boT={this.props.books.filter((b) => b.archived === "b")} delAction={this.props.onDeleteBook} moveAction={this.props.moveTo} />
-                    <ArciveBook boF={this.props.books.filter((b) => b.archived === "s")} delAction={this.props.onDeleteBook} moveAction={this.props.moveTo} />
+                    <DisplayBook boT={this.props.books.filter((b) => b.archived === true)} delAction={this.props.onDeleteBook} moveAction={this.props.moveTo} />
+                    <ArciveBook boF={this.props.books.filter((b) => b.archived === false)} delAction={this.props.onDeleteBook} moveAction={this.props.moveTo} />
                 </div>
             </div>
         )

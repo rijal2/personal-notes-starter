@@ -12,10 +12,8 @@ class DisplayBook extends React.Component {
                 <h2>RAK 1</h2>
                 <h2>BUKU BACAAN</h2>
                     {
-                        
                         this.props.boT.map((b) => (
-
-                            <BoxBook id={b.id} delAction={this.props.delAction} moveAction={this.props.moveAction} key={b.id} {...b}/>
+                                <BoxBook id={b.id} delAction={this.props.delAction} moveAction={this.props.moveAction} key={b.id} {...b}/>
                             )
                         )
                     }

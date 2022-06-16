@@ -7,7 +7,8 @@ class AddBook extends React.Component{
         this.state = {
             title: "",
             body: "",
-            archived: ""
+            archived: Boolean,
+            limitChart: 0
         }
 
         this.inputTitle = this.inputTitle.bind(this)
@@ -16,16 +17,17 @@ class AddBook extends React.Component{
         this.onSubmitAdd = this.onSubmitAdd.bind(this)
     }
 
-    inputId(){
+    countCharacterTitle(){
 
     }
 
     inputTitle(event){
-        event.target.value.length < 10 ?
+        event.target.value.length < 50 ?
         this.setState((previousState) => {
             return {
                 ...previousState,
-                title: event.target.value
+                title: event.target.value,
+                limitChart: 50 - event.target.value.length
             }
             
         }) : alert(`Judul yang anda masukkan terlalu panjang`)
@@ -46,7 +48,7 @@ class AddBook extends React.Component{
         this.setState((previousState) => {
             return {
                 ...previousState,
-                archived: event.target.value
+                archived: event.target.value === "b" ? true : false
             }
         })
 
@@ -67,6 +69,7 @@ class AddBook extends React.Component{
                 <div className="input">
                     <label>Judul</label>
                     <input id="inputBookTitle" type="text" placeholder="Masukkan judul buku disini ..." value={this.state.title} onChange={this.inputTitle}/>
+                    <p><i>Jumlah karakter {this.state.limitChart} (maks. 50 karakter)</i></p>
                 </div>
                 <div className="input">
                     <label>Deskripsi</label>

@@ -15,8 +15,8 @@ class BookApp extends React.Component{
         const data = getInitialData()
         this.state = {
             books: data,
-            booksTrue: data.filter((book) => book.archived === "b"),
-            booksFalse: data.filter((book) => book.archived === "s")
+            booksTrue: data.filter((book) => book.archived === true),
+            booksFalse: data.filter((book) => book.archived === false)
         }
 
         this.onMove = this.onMove.bind(this)
@@ -40,8 +40,8 @@ class BookApp extends React.Component{
                 ...previousState.books,
                 newAr
             ];
-            const bT = () => bookAll.filter((b) => b.archived === "b")
-            const bF = () => bookAll.filter((b) => b.archived === "s")
+            const bT = () => bookAll.filter((b) => b.archived === true)
+            const bF = () => bookAll.filter((b) => b.archived === false)
             return{
                 books: [
                     ...bookAll
@@ -69,22 +69,22 @@ class BookApp extends React.Component{
             const newAr = () => previousState.books.find((book) => book.id === id)
 
             const change = (ok) => {
-                if(ok.archived === "b"){
-                    return{...ok, archived: "s"}
+                if(ok.archived === true){
+                    return{...ok, archived: false}
                     
                   }
-                  return{...ok, archived: "b"}
+                  return{...ok, archived: true}
             }
             const bT = (ok) => ([...ok, change(newAr())])
               
             return{
                 books: [change(newAr()), ...books()],
                 booksTrue: [
-                    ...bT(books()).filter((book) => book.archived === "b"),
+                    ...bT(books()).filter((book) => book.archived === true),
                     
                 ],
                 booksFalse: [
-                    ...bT(books()).filter((book) => book.archived === "s"),
+                    ...bT(books()).filter((book) => book.archived === false),
                     
                 ]
             }
@@ -92,8 +92,15 @@ class BookApp extends React.Component{
         
     }
 
-    onDelete = () => {
-
+    onDelete = (id) => {
+        this.setState((previousState) => {
+            const seleksi = previousState.books.filter((b) => b.id !== id)
+            return{
+                books: [
+                    ...seleksi
+                ]
+            }
+        })
     }
   
     render(){
@@ -107,7 +114,7 @@ class BookApp extends React.Component{
                             <AddBook addNewBook={this.onSubmitAddNewBook} />
                             <SearchBook />
                         </div>
-                        <Listbook books={this.state.books} moveTo={this.onMove} />
+                        <Listbook books={this.state.books} moveTo={this.onMove} onDeleteBook={this.onDelete} />
                     </div>
                 </main>
         )
